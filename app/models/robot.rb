@@ -49,4 +49,8 @@ class Robot
                       WHERE id = ?;", id)
   end
 
+def ogre
+  @ogre
+end
+
 end

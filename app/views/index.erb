@@ -1,13 +1,28 @@
-<h1>My Robots</h1>
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a class="link" href="/robots/new">Make a New Bot</a></li>
+    </ul>
+  </div>
+</nav>
+<h1 class="page-header">My Robots</h1>
 <% @robots.each do |robot| %>
-<h3><%= robot.name %></h3></br>
-<p><%= robot.description %></p></br>
-<form action="/robots/<%= robot.id %>" method="POST">
+<h3 class="name"><%= robot.name %></h3></br>
+<p class="description"><%= robot.description %></p></br>
+<form class="button2" action="/robots/<%= robot.id %>" method="POST">
   <input type="hidden" name="_method" value="DELETE">
-  <input type="submit" value="Delete"/>
+  <input type="submit" class="button" value="Delete"/>
 </form>
-<form action="/robots/<%= robot.id %>/edit" method="GET">
+<form  class="button" action="/robots/<%= robot.id %>/edit" method="GET">
   <input type="submit" value="Edit"/>
 </form>
 <% end %>
-<a href="/robots/new">Make a New Bot</a>
